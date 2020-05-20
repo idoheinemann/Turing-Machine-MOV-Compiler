@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Turing Maching MOV Compiler", "Turing Maching MOV Compiler\Turing Maching MOV Compiler.vcxproj", "{CB01BB68-5F8B-44BA-8705-0A9405CB87C7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB01BB68-5F8B-44BA-8705-0A9405CB87C7}.Debug|x64.ActiveCfg = Debug|x64
+		{CB01BB68-5F8B-44BA-8705-0A9405CB87C7}.Debug|x64.Build.0 = Debug|x64
+		{CB01BB68-5F8B-44BA-8705-0A9405CB87C7}.Debug|x86.ActiveCfg = Debug|Win32
+		{CB01BB68-5F8B-44BA-8705-0A9405CB87C7}.Debug|x86.Build.0 = Debug|Win32
+		{CB01BB68-5F8B-44BA-8705-0A9405CB87C7}.Release|x64.ActiveCfg = Release|x64
+		{CB01BB68-5F8B-44BA-8705-0A9405CB87C7}.Release|x64.Build.0 = Release|x64
+		{CB01BB68-5F8B-44BA-8705-0A9405CB87C7}.Release|x86.ActiveCfg = Release|Win32
+		{CB01BB68-5F8B-44BA-8705-0A9405CB87C7}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B36D36BD-6B0F-4990-B3C3-5B7D2D118043}
+	EndGlobalSection
+EndGlobal
