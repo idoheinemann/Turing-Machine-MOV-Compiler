@@ -3,7 +3,18 @@
 
 #include <iostream>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+#include "TuringMachine.h"
+#include "MASMSyntax.h"
+using namespace std;
+
+int main(){
+    Tape t;
+    t.size = 100;
+    t.startIndex = 10;
+    t.letters = new char[100];
+    AssemblySyntax* syntax = new MASMSyntax();
+    cout << t.toAssemblyString(*syntax);
+
+    char buffer[80];
+    cin >> buffer;
 }

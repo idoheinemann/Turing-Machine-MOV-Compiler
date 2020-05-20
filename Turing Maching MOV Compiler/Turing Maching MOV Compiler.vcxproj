@@ -147,7 +147,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Action.cpp" />
+    <ClCompile Include="State.cpp" />
+    <ClCompile Include="Tape.cpp" />
     <ClCompile Include="Turing Maching MOV Compiler.cpp" />
+    <ClCompile Include="TuringMachine.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Action.h" />
+    <ClInclude Include="AssemblySyntax.h" />
+    <ClInclude Include="MASMSyntax.h" />
+    <ClInclude Include="Registers.h" />
+    <ClInclude Include="State.h" />
+    <ClInclude Include="Tape.h" />
+    <ClInclude Include="TuringMachine.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
