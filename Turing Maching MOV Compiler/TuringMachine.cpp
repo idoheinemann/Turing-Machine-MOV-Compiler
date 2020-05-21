@@ -22,10 +22,18 @@ string TuringMachine::toAssemblyString(AssemblySyntax& syntax) {
 
 	string label = "turing_machine_operator";
 	res += syntax.label(label);
+	res += syntax.mov(A, syntax.readReg(T)); // get current letter on tape
+	res += syntax.mov(X, syntax.readTwoReg(Q, A)); // get action to perform
+	res += syntax.mov(D, syntax.readReg(X)); // get moving direction
+	res += syntax.mov(X, syntax.readTwoReg(X, syntax.readGap()));  // get writing char address
+	res += syntax.mov(Y, syntax.readReg(X)); // get writing char
+	res += syntax.mov(syntax.readReg(T), Y); // write writing char
+	res += syntax.mov(T, syntax.readTwoReg(T, syntax.readGap())); // get adjacent tape cells
+	res += syntax.mov(T, syntax.readTwoReg(T, D)); // get next cell by direction
+	res += syntax.mov(Q, syntax.readTwoReg(X, syntax.readGap())); // get next state
 
-
-
-	res += syntax.jmp(label);
-
+	res += syntax.jmp(label); // unconditional jump to label, this is not cheating because it is equivalent to  copying the code over and over again.
+		
+	res += syntax.endMain();
 	return res;
 }

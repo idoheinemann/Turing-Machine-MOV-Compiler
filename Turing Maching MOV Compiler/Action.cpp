@@ -28,5 +28,5 @@ string Action::toAssemblyString(AssemblySyntax& syntax)
 
 string Action::actionOffset(AssemblySyntax& syntax)
 {
-	return string();
+	return syntax.address("AD" + to_string(this->key) + "_" + to_string(this->fromIndex));
 }

@@ -16,5 +16,7 @@ public:
 	virtual string label(string name) = 0;
 	virtual string jmp(string label) = 0;
 	virtual string constant(string name, string value) = 0;
-	virtual string readReg(string addr) = 0;
+	virtual string readReg(string reg) = 0;
+	virtual string readTwoReg(string reg1, string reg2) = 0;
+	virtual string readGap() = 0;
 };

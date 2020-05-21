@@ -10,6 +10,12 @@ string Tape::getStartAddr(AssemblySyntax& syntax) {
 	return syntax.address("T_" + to_string(this->startIndex));
 }
 
+Tape::Tape(unsigned int size, unsigned int startIndex)
+{
+	this->size = size;
+	this->startIndex = startIndex;
+}
+
 string Tape::toAssemblyString(AssemblySyntax& syntax) {
 	string ret = "";
 	string tempVar = "";
@@ -30,7 +36,7 @@ string Tape::toAssemblyString(AssemblySyntax& syntax) {
 		}
 		tempVar = "NT_" + to_string(i);
 		ret += syntax.dword(tempVar, new string[2]{ leftName, rightName }, 2);
-		ret += syntax.dword("T_" + to_string(i), new string[2]{ string(1, this->letters[i]), syntax.address(tempVar) }, 2);
+		ret += syntax.dword("T_" + to_string(i), new string[2]{ "0", syntax.address(tempVar) }, 2);
 	}
 	return ret;
 }

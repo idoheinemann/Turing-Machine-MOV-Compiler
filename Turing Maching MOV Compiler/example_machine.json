@@ -1,0 +1,39 @@
+{
+  "tape": {
+    "size": 100,
+    "start": 50
+  },
+  "states": [
+    {
+      "0": {
+        "write": 1,
+        "move": "R",
+        "next": 1
+      },
+      "1": {
+        "write": 1,
+        "move": "L",
+        "next": 2
+      }
+    },
+    {
+      "0": {
+        "write": 1,
+        "move": "L",
+        "next": 0
+      },
+      "1": {
+        "write": 1,
+        "move": "R",
+        "next": 1
+      }
+    },
+    {
+      "0": {
+        "write": 1,
+        "move": "L",
+        "next": 1
+      }
+    }
+  ]
+}

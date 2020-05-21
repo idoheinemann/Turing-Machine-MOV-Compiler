@@ -162,6 +162,9 @@
     <ClInclude Include="Tape.h" />
     <ClInclude Include="TuringMachine.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="example_machine.json" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

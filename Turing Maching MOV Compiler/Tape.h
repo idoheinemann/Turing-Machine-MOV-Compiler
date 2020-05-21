@@ -7,9 +7,8 @@ class Tape {
 public:
 	unsigned int size;
 	unsigned int startIndex;
-	char* letters;
 	
-	Tape(int size, int startIndex, char* letters);
+	Tape(unsigned int size, unsigned int startIndex);
 
 	string toAssemblyString(AssemblySyntax& syntax);
 	string getStartAddr(AssemblySyntax& syntax);

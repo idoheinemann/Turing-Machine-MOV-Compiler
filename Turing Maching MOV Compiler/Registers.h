@@ -1,7 +1,9 @@
 #pragma once
 
 
-#define EAX "eax"
-#define EBX "ebx"
-#define ECX "ecx"
-#define EDX "edx"
+#define T "eax"
+#define Q "ebx"
+#define A "ecx"
+#define D "edx"
+#define X "edi"
+#define Y "esi"

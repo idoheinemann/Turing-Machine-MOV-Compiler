@@ -45,4 +45,10 @@ class MASMSyntax : public AssemblySyntax {
 	string readReg(string addr) {
 		return "[" + addr + "]";
 	}
+	string readTwoReg(string reg1, string reg2) {
+		return "[" + reg1 + " + " + reg2 + "]";
+	}
+	string readGap() {
+		return "4";
+	}
 };

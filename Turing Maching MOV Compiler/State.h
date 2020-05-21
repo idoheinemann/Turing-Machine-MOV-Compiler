@@ -9,11 +9,11 @@ class Action;
 class State {
 public:
 	bool hasStartedGenerating = false;
-	int index;
+	unsigned int index;
 	Action* onZero;
 	Action* onOne;
 
-	State(int index);
+	State(unsigned int index);
 
 	string toAssemblyString(AssemblySyntax& syntax);
 	string stateOffset(AssemblySyntax& syntax);
