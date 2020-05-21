@@ -19,4 +19,10 @@ public:
 	virtual string readReg(string reg) = 0;
 	virtual string readTwoReg(string reg1, string reg2) = 0;
 	virtual string readGap() = 0;
+	virtual string getTRegister() = 0;
+	virtual string getQRegister() = 0;
+	virtual string getDRegister() = 0;
+	virtual string getARegister() = 0;
+	virtual string getXRegister() = 0;
+	virtual string getYRegister() = 0;
 };

@@ -1,6 +1,5 @@
 #include <iostream>
 #include "TuringMachine.h"
-#include "Registers.h"
 using namespace std;
 
 TuringMachine::TuringMachine(Tape* tape, State* state){
@@ -17,20 +16,20 @@ string TuringMachine::toAssemblyString(AssemblySyntax& syntax) {
 
 	res += syntax.codeSegment();
 	res += syntax.mainProc();
-	res += syntax.mov(T, this->tape->getStartAddr(syntax));
-	res += syntax.mov(Q, this->q0->stateOffset(syntax));
+	res += syntax.mov(syntax.getTRegister(), this->tape->getStartAddr(syntax));
+	res += syntax.mov(syntax.getQRegister(), this->q0->stateOffset(syntax));
 
 	string label = "turing_machine_operator";
 	res += syntax.label(label);
-	res += syntax.mov(A, syntax.readReg(T)); // get current letter on tape
-	res += syntax.mov(X, syntax.readTwoReg(Q, A)); // get action to perform
-	res += syntax.mov(D, syntax.readReg(X)); // get moving direction
-	res += syntax.mov(X, syntax.readTwoReg(X, syntax.readGap()));  // get writing char address
-	res += syntax.mov(Y, syntax.readReg(X)); // get writing char
-	res += syntax.mov(syntax.readReg(T), Y); // write writing char
-	res += syntax.mov(T, syntax.readTwoReg(T, syntax.readGap())); // get adjacent tape cells
-	res += syntax.mov(T, syntax.readTwoReg(T, D)); // get next cell by direction
-	res += syntax.mov(Q, syntax.readTwoReg(X, syntax.readGap())); // get next state
+	res += syntax.mov(syntax.getARegister(), syntax.readReg(syntax.getTRegister())); // get current letter on tape
+	res += syntax.mov(syntax.getXRegister(), syntax.readTwoReg(syntax.getQRegister(), syntax.getARegister())); // get action to perform
+	res += syntax.mov(syntax.getDRegister(), syntax.readReg(syntax.getXRegister())); // get moving direction
+	res += syntax.mov(syntax.getXRegister(), syntax.readTwoReg(syntax.getXRegister(), syntax.readGap()));  // get writing char address
+	res += syntax.mov(syntax.getYRegister(), syntax.readReg(syntax.getXRegister())); // get writing char
+	res += syntax.mov(syntax.readReg(syntax.getTRegister()), syntax.getYRegister()); // write writing char
+	res += syntax.mov(syntax.getTRegister(), syntax.readTwoReg(syntax.getTRegister(), syntax.readGap())); // get adjacent tape cells
+	res += syntax.mov(syntax.getTRegister(), syntax.readTwoReg(syntax.getTRegister(), syntax.getDRegister())); // get next cell by direction
+	res += syntax.mov(syntax.getQRegister(), syntax.readTwoReg(syntax.getXRegister(), syntax.readGap())); // get next state
 
 	res += syntax.jmp(label); // unconditional jump to label, this is not cheating because it is equivalent to  copying the code over and over again.
 		

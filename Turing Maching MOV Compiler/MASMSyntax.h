@@ -51,4 +51,22 @@ class MASMSyntax : public AssemblySyntax {
 	string readGap() {
 		return "4";
 	}
+	string getTRegister() {
+		return "eax";
+	}
+	string getQRegister() {
+		return "ebx";
+	}
+	string getDRegister() {
+		return "ecx";
+	}
+	string getARegister() {
+		return "edx";
+	}
+	string getXRegister() {
+		return "esi";
+	}
+	string getYRegister() {
+		return "edi";
+	}
 };
