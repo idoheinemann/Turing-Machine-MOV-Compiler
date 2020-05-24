@@ -1,0 +1,60 @@
+{
+  "syntax": "masm32xor",
+  "tape": {
+    "size": 20,
+    "start": 10
+  },
+  "states": [
+    {
+      "0": {
+        "write": 1,
+        "move": "R",
+        "next": 1
+      }
+    },
+    {
+      "0": {
+        "write": 0,
+        "move": "L",
+        "next": 2
+      }
+    },
+    {
+      "0": {
+        "write": 0,
+        "move": "R",
+        "next": 3
+      },
+      "1": {
+        "write": 0,
+        "move": "R",
+        "next": 4
+      }
+    },
+    {
+      "0": {
+        "write": 0,
+        "move": "R",
+        "next": 5
+      },
+      "1": {
+        "write": 0,
+        "move": "R",
+        "next": 5
+      }
+    },
+    {
+      "0": {
+        "write": 0,
+        "move": "R",
+        "next": 5
+      },
+      "1": {
+        "write": 1,
+        "move": "R",
+        "next": 5
+      }
+    },
+    {}
+  ]
+}

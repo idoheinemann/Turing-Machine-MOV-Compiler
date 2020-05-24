@@ -36,7 +36,7 @@ int main(int argc, char** argv){
     //std::cout << root << std::endl;
     Json::Value statesJson = root["states"];
     Json::Value tapeJson = root["tape"];
-    State** allStates = new State * [3]{};
+    State** allStates = new State * [statesJson.size()]{};
     for (unsigned int i = 0; i < statesJson.size(); i++) {
         allStates[i] = new State(i);
     }

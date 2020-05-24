@@ -167,6 +167,7 @@
     <ClInclude Include="TuringMachine.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="binary_and.json" />
     <None Include="example_machine.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

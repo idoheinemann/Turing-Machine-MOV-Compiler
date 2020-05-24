@@ -73,5 +73,8 @@
     <None Include="example_machine.json">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="binary_and.json">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>
