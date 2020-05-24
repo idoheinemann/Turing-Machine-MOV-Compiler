@@ -155,9 +155,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Action.h" />
+    <ClInclude Include="ALLAssemblySyntax.h" />
     <ClInclude Include="AssemblySyntax.h" />
     <ClInclude Include="EMU8086Syntax.h" />
+    <ClInclude Include="MASM32SUBSyntax.h" />
     <ClInclude Include="MASM32Syntax.h" />
+    <ClInclude Include="MASM32XORSyntax.h" />
     <ClInclude Include="NASM16Syntax.h" />
     <ClInclude Include="State.h" />
     <ClInclude Include="Tape.h" />

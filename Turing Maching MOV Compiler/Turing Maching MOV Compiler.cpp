@@ -6,9 +6,7 @@
 #include <fstream>
 
 #include "TuringMachine.h"
-#include "MASM32Syntax.h"
-#include "NASM16Syntax.h"
-#include "EMU8086Syntax.h"
+#include "ALLAssemblySyntax.h"
 
 using namespace std;
 
@@ -22,11 +20,6 @@ int main(int argc, char** argv){
     else {
         filePath = argv[1];
     }
-    map<const string, AssemblySyntax*> syntaxMap = {
-        {"masm32", new MASM32Syntax()},
-        {"nasm16", new NASM16Syntax()},
-        {"emu8086", new EMU8086Syntax()}
-    };
     
     Json::Value root;
     ifstream fst;

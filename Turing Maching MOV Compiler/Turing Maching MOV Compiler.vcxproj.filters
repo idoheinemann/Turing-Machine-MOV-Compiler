@@ -59,6 +59,15 @@
     <ClInclude Include="EMU8086Syntax.h">
       <Filter>Header Files\Assembly Syntax</Filter>
     </ClInclude>
+    <ClInclude Include="MASM32SUBSyntax.h">
+      <Filter>Header Files\Assembly Syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="ALLAssemblySyntax.h">
+      <Filter>Header Files\Assembly Syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="MASM32XORSyntax.h">
+      <Filter>Header Files\Assembly Syntax</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="example_machine.json">
