@@ -1,7 +1,8 @@
 {
+  "syntax": "emu8086",
   "tape": {
-    "size": 100,
-    "start": 50
+    "size": 20,
+    "start": 10
   },
   "states": [
     {

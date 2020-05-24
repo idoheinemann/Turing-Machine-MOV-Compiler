@@ -15,6 +15,6 @@ public:
 
 	State(unsigned int index);
 
-	string toAssemblyString(AssemblySyntax& syntax);
-	string stateOffset(AssemblySyntax& syntax);
+	void toAssemblyString(string& code, AssemblySyntax& syntax);
+	string stateOffset(string& code, AssemblySyntax& syntax);
 };

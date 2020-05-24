@@ -50,7 +50,13 @@
     <ClInclude Include="AssemblySyntax.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="MASMSyntax.h">
+    <ClInclude Include="MASM32Syntax.h">
+      <Filter>Header Files\Assembly Syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="NASM16Syntax.h">
+      <Filter>Header Files\Assembly Syntax</Filter>
+    </ClInclude>
+    <ClInclude Include="EMU8086Syntax.h">
       <Filter>Header Files\Assembly Syntax</Filter>
     </ClInclude>
   </ItemGroup>

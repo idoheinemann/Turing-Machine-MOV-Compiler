@@ -16,6 +16,6 @@ public:
 
 	Action(int fromIndex, int key, int write, int direction, State* toState);
 
-	string toAssemblyString(AssemblySyntax& syntax);
-	string actionOffset(AssemblySyntax& syntax);
+	void toAssemblyString(string& code, AssemblySyntax& syntax);
+	string actionOffset(string& code, AssemblySyntax& syntax);
 };

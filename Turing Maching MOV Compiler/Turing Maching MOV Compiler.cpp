@@ -6,20 +6,28 @@
 #include <fstream>
 
 #include "TuringMachine.h"
-#include "MASMSyntax.h"
+#include "MASM32Syntax.h"
+#include "NASM16Syntax.h"
+#include "EMU8086Syntax.h"
 
 using namespace std;
 
 int main(int argc, char** argv){
+    
     char* filePath = new char[512]{};
     if (argc == 1) {
-        cout << "Enter JSON File path: " << endl;
+        std::cout << "Enter JSON File path: " << endl;
         cin >> filePath;
     }
     else {
         filePath = argv[1];
     }
-    AssemblySyntax* syntax = new MASMSyntax();
+    map<const string, AssemblySyntax*> syntaxMap = {
+        {"masm32", new MASM32Syntax()},
+        {"nasm16", new NASM16Syntax()},
+        {"emu8086", new EMU8086Syntax()}
+    };
+    
     Json::Value root;
     ifstream fst;
     fst.open(filePath);
@@ -31,6 +39,7 @@ int main(int argc, char** argv){
         std::cout << errs << std::endl;
         return EXIT_FAILURE;
     }
+    AssemblySyntax* syntax = syntaxMap[root["syntax"].asString()];
     //std::cout << root << std::endl;
     Json::Value statesJson = root["states"];
     Json::Value tapeJson = root["tape"];
@@ -41,20 +50,21 @@ int main(int argc, char** argv){
     Json::Value valZero(0);
     Json::Value st;
     Json::Value act;
+    string tmp = "";
     for (unsigned int i = 0; i < statesJson.size(); i++) {
         st = statesJson[i];
         if (!(act = st["0"]).isNull()) {
-            int write = act["write"].asInt() ? stoi(syntax->readGap()) : 0;
-            int dir = act["move"].asString() == "L" ? 0 : stoi(syntax->readGap());
+            int write = act["write"].asInt() ? stoi(syntax->readGap(tmp)) : 0;
+            int dir = act["move"].asString() == "L" ? 0 : stoi(syntax->readGap(tmp));
             allStates[i]->onZero = new Action(i, 0, write, dir, allStates[act["next"].asInt()]);
         }
         if (!(act = st["1"]).isNull()) {
-            int write = act["write"].asInt() ? stoi(syntax->readGap()) : 0;
-            int dir = act["move"].asString() == "L" ? 0 : stoi(syntax->readGap());
+            int write = act["write"].asInt() ? stoi(syntax->readGap(tmp)) : 0;
+            int dir = act["move"].asString() == "L" ? 0 : stoi(syntax->readGap(tmp));
             allStates[i]->onOne = new Action(i, 1, write, dir, allStates[act["next"].asInt()]);
         }
     }
     TuringMachine machine(new Tape(tapeJson["size"].asInt(), tapeJson["start"].asInt()), allStates[0]);
-    cout << machine.toAssemblyString(*syntax) << endl;
+    std::cout << machine.toAssemblyString(*syntax) << endl;
     return EXIT_SUCCESS;
 }

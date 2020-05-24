@@ -10,6 +10,6 @@ public:
 	
 	Tape(unsigned int size, unsigned int startIndex);
 
-	string toAssemblyString(AssemblySyntax& syntax);
-	string getStartAddr(AssemblySyntax& syntax);
+	void toAssemblyString(string& code, AssemblySyntax& syntax);
+	string getStartAddr(string& code, AssemblySyntax& syntax);
 };
